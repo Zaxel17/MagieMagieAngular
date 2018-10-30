@@ -13,3 +13,11 @@
     <button>Valider</button>
   </form>
 </div>
+
+<div id="ListeDesParties" *ngIf="joueur.isConnected" >
+
+Liste des parties !
+
+  <div *ngFor="let game of listepartie"> {{game.id}}</div>
+
+</div>

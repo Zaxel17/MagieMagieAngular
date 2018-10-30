@@ -3,6 +3,9 @@ import {Player} from "../models/player";
 import {NgForm} from "@angular/forms";
 import {Avatar} from "../models/avatar";
 import {AvatarsService} from "../services/avatars.service";
+import {LoginService} from "../services/login.service";
+import {Game} from '../models/game';
+import {GameService} from "../services/game.service";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +20,9 @@ export class HomeComponent implements OnInit {
   newPseudo: string;
   newAvatar: string;
 
-  constructor(private avatarservice:AvatarsService) {
+  listepartie:Game[];
+
+  constructor(private avatarservice:AvatarsService, private logservice:LoginService, private gameService:GameService) {
     this.avatar = {_id: "", code: ""};
     this.joueur = {
       _id: "",
@@ -43,12 +48,25 @@ export class HomeComponent implements OnInit {
   connexion(form:NgForm) {
     let pseudo = this.newPseudo;
     let i = this.avatars.findIndex(a => a.code==this.newAvatar);
-    console.log(this.avatars[i]._id);
-    console.log(this.avatars[i].code);
 
-    this.joueur.isConnected = true;
-    this.joueur.pseudo = pseudo;
-    this.joueur.avatar = this.avatars[i];
+    let post = [];
+    post.push(pseudo);
+    post.push(this.avatars[i]._id);
+    console.log(post);
+    this.logservice.postPlayer(post)
+      .subscribe(
+      (players:Player) => {
+        this.joueur = players;
+      });
+
+    this.listeGame()
+  }
+
+  listeGame(){
+    this.gameService.getListePartie().subscribe( games => {
+      this.listepartie = games;
+    });
+
 
   }
 }
