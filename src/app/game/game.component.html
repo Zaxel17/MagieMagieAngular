@@ -1,0 +1,49 @@
+<div id="tapis">
+  <div id="sort_0">
+    <span class="carte_3 taille_carte_sort"></span><span class="carte_5 taille_carte_sort"></span>
+  </div>
+  <div id="sort_1">
+    <span class="carte_3 taille_carte_sort"></span><span class="carte_1 taille_carte_sort"></span>
+  </div>
+  <div id="sort_2">
+    <span class="carte_5 taille_carte_sort"></span><span class="carte_2 taille_carte_sort"></span>
+  </div>
+  <div id="sort_3">
+    <span class="carte_2 taille_carte_sort"></span><span class="carte_4 taille_carte_sort"></span>
+  </div>
+  <div id="sort_4">
+    <span class="carte_1 taille_carte_sort"></span><span class="carte_4 taille_carte_sort"></span>
+  </div>
+  <div id="jeu">
+    <div id="pioche" class="taille_carte_normal position_pioche"></div>
+    <div class="{{principal.avatar.code}} avatar_joueur"></div><div class="nom_joueur">{{principal.pseudo}}</div>
+
+
+  <div id="cadre_joueur_adverse">
+    <div class="joueur_adverse" *ngFor="let autresJoueur of autresJoueurs">
+      <div class="{{autresJoueur.avatar.code}} avatar_joueur_adverse" id="joueur_{{autresJoueur.positionInGame}}"></div><div class="nom_joueur_adverse" id="nom_joueur_{{autresJoueur.positionInGame}}">{{autresJoueur.pseudo}}</div>
+
+      <ul class="cartes_joueur_adverse joueur_adverse_{{autresJoueur.positionInGame}}">
+        <li *ngFor="let carte of arrayN(autresJoueur.nbCards)" ><div class="carte_dos"></div></li>
+      </ul>
+
+
+    </div>
+  </div>
+
+
+  </div>
+</div>
+
+<!--<div id="tapis">
+  <div id="jeu">
+
+    <div class="joueur" *ngFor="let joueur of joueurs" class="col">
+      <img src="avatar">
+      <div class="card" *ngFor="joueur.cards" [style.transform]="'rotate('+player.radian+')'">
+        <img src="dos.jpg">
+      </div>
+    </div>
+
+  </div>
+</div>-->

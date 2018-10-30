@@ -1,0 +1,222 @@
+#tapis {
+  position: absolute;
+  top: 0px;
+  background-image: url('../../assets/images/fond_tapis.jpg');
+  background-size: 1920px 1080px;
+  background-repeat : no-repeat;
+  width: 1920px;
+  height: 1080px;
+}
+/* PIOCHE */
+#pioche {
+  background-image: url('../../assets/images/cartes/carte_dos.png');
+  z-index : 20;
+
+}
+.position_pioche {
+  position: absolute;
+  top : 440px;
+  left : 1200px;
+}
+/* CARTES */
+.carte_1, .carte_2, .carte_3, .carte_4, .carte_5, .carte_dos {
+  background-repeat : no-repeat;
+}
+.carte_1 { /* Mandragore */
+  background-image: url('../../assets/images/cartes/carte_1.png');
+}
+.carte_2 { /* Lapis-lazuli */
+  background-image: url('../../assets/images/cartes/carte_2.png');
+}
+.carte_3 { /* Licorne */
+  background-image: url('../../assets/images/cartes/carte_3.png');
+}
+.carte_4 { /* Chauve souris */
+  background-image: url('../../assets/images/cartes/carte_4.png');
+}
+.carte_5 { /* Crapaud */
+  background-image: url('../../assets/images/cartes/carte_5.png');
+}
+.carte_dos {
+  background-image: url('../../assets/images/cartes/carte_dos.png');
+  width: 100px;
+  height: 150px;
+  background-size: 100px 150px;
+}
+.taille_carte_mini {
+  width: 100px;
+  height: 150px;
+  background-size: 100px 150px;
+}
+.taille_carte_normal {
+  width: 150px;
+  height: 225px;
+  background-size: 150px 225px;
+}
+.cartes_joueur .carte_1:hover, .cartes_joueur .carte_2:hover, .cartes_joueur .carte_3:hover, .cartes_joueur .carte_4:hover, .cartes_joueur .carte_5:hover{
+  transform: scale(1.2);
+  transition: all .3s ease;
+}
+
+.cartes_joueur .carte_1:active, .cartes_joueur .carte_2:active, .cartes_joueur .carte_3:active, .cartes_joueur .carte_4:active, .cartes_joueur .carte_5:active{
+  transform: translateY(-150px);
+  transition: all .3s ease;
+  z-index: 1;
+}
+
+/* sorts */
+#sort_0, #sort_1, #sort_2, #sort_3, #sort_4 {
+  width: 200px;
+  height: 150px;
+  margin : auto;
+  position: absolute;
+}
+.taille_carte_sort {
+  width: 100px;
+  height: 150px;
+  background-size: 100px 150px;
+  display: inline-block;
+}
+/*
+INVISIBILITE: le joueur prend 1 carte(au hasard) chez tous ses adversaires
+Ingrédients: corne de licorne (carte_3) + bave de crapaud (carte_5)
+*/
+#sort_0 {
+  top : 50px;
+  right : 20px;
+}
+/*
+PHILTRE D’AMOUR: le joueur de votre choix vous donne la moitié de ses cartes(au hasard). S’il ne possède qu’une carte il a perdu:
+Ingrédients: corne de licorne (carte_3) + mandragore (carte_1)
+*/
+#sort_1 {
+  top : 266px;
+  right : 20px;
+}
+/*
+HYPNOSE: le joueur échange une carte de son choix contre trois cartes(au hasard) de la victime qu’il choisit
+Ingrédients: bave de crapaud (carte_5) + lapis-lazuli (carte_2)
+*/
+#sort_2 {
+  top : 482px;
+  right : 20px;
+}
+/*
+DIVINATION: le joueur peut voir les cartes de tous les autres joueurs
+Ingrédients: lapis-lazuli (carte_2) + aile-de chauve-souris (carte_4)
+*/
+#sort_3 {
+  top : 698px;
+  right : 20px;
+}
+/*
+SOMMEIL-PROFOND: le joueur choisit une victime qui ne pourra pas lancer de sorts pendant 2 tours
+Ingrédients: mandragore (carte_1) + aile de chauve-souris (carte_4)
+*/
+#sort_4 {
+  top : 914px;
+  right : 20px;
+}
+
+/* AVATARS */
+.avatar1, .avatar2, .avatar3, .avatar4, .avatar5, .avatar6, .avatar7, .avatar8 {
+  background-repeat : no-repeat;
+}
+.avatar1 { background-image: url('../../assets/images/avatars/avatar_1.png'); }
+.avatar2 { background-image: url('../../assets/images/avatars/avatar_2.png'); }
+.avatar3 { background-image: url('../../assets/images/avatars/avatar_3.png'); }
+.avatar4 { background-image: url('../../assets/images/avatars/avatar_4.png'); }
+.avatar5 { background-image: url('../../assets/images/avatars/avatar_5.png'); }
+.avatar6 { background-image: url('../../assets/images/avatars/avatar_6.png'); }
+.avatar7 { background-image: url('../../assets/images/avatars/avatar_7.png'); }
+.avatar8 { background-image: url('../../assets/images/avatars/avatar_8.png'); }
+
+.avatar_joueur {
+  background-size: 200px 300px;
+  position: absolute;
+  background-repeat : no-repeat;
+  width: 200px;
+  height: 300px;
+  top : 780px;
+  left : 225px;
+  z-index : 30;
+}
+.nom_joueur {
+  background-size: 300px 60px;
+  position: absolute;
+  background-image: url('../../assets/images/nom.png');
+  width: 300px;
+  left : 175px;
+  height: 60px;
+  top : 1007px;
+  color : black;
+  text-align: center;
+  font-size: 24px;
+  z-index : 40;
+}
+#cadre_joueur_adverse {
+  width: 1670px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300px;
+  display: flex;
+}
+
+#cadre_joueur_adverse .joueur_adverse {
+  flex: 1;
+}
+.avatar_joueur_adverse {
+  background-size: 150px 200px;
+  position: absolute;
+  background-repeat : no-repeat;
+  width: 150px;
+  height: 200px;
+  top : 20px;
+  margin-left : 100px;
+  z-index : 30;
+}
+
+.nom_joueur_adverse {
+  background-size: 200px 40px;
+  position: absolute;
+  background-image: url('../../assets/images/nom.png');
+  width: 200px;
+  height: 40px;
+  top : 173px;
+  margin-left : 75px;
+  color : black;
+  text-align: center;
+  font-size: 20px;
+  z-index : 40;
+}
+
+/* Positionnement des cartes des joueurs adverses */
+.cartes_joueur_adverse li {
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  top : 440px;
+  left : 1200px;
+  z-index : 10;
+}
+
+/* Positionnement des cartes dujoueur */
+.cartes_joueur li {
+  width: 150px;
+  height: 225px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  top : 440px;
+  left : 1200px;
+  z-index : 10;
+}
+
+
