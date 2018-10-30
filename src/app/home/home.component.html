@@ -5,11 +5,15 @@
 <div id="Connection" *ngIf="!joueur.isConnected">
   <form #f="ngForm" (ngSubmit)="connexion(f)" >
     <label>Selectionner votre avatar :</label>
-    <select #avatar name="avatar"  [(ngModel)]="newAvatar">
-      <option *ngFor="let av of avatars"></option>
-    </select>
 
-    <div *ngFor="let av of avatars" class="av.code avatar_joueur_adverse"></div>
+<!--    <select #avatar name="avatar"  [(ngModel)]="newAvatar">
+      <option *ngFor="let av of avatars"> {{av.code}}</option>
+    </select>-->
+
+    <span *ngFor="let av of avatars" class="{{av.code}} avatar_joueur" >
+      hello {{av.code}}
+    </span>
+
     <label>Selectionner votre pseudo :</label>
     <input #pseudo name="pseudo" type="text" [(ngModel)]="newPseudo">
     <button>Valider</button>

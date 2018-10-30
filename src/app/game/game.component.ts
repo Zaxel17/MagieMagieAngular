@@ -25,10 +25,10 @@ export class GameComponent implements OnInit {
     this.cartes_joueur = [];
     this.sortsDisponible = [];
 
-    gameactionservice.getEtatPartie(this.gameId,this.userId)
+/*    gameactionservice.getEtatPartie(this.gameId,this.userId)
       .subscribe(joueur => {
         this.userId = joueur;
-      });
+      });*/
 
 
     gameactionservice.getListeDesCartes(this.userId)

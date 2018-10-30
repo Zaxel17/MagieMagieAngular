@@ -1,0 +1,20 @@
+.avatar1, .avatar2, .avatar3, .avatar4, .avatar5, .avatar6, .avatar7, .avatar8 {
+  background-repeat : no-repeat;
+}
+
+.avatar1 { background-image: url('../../assets/images/avatars/avatar_1.png'); }
+.avatar2 { background-image: url('../../assets/images/avatars/avatar_2.png'); }
+.avatar3 { background-image: url('../../assets/images/avatars/avatar_3.png'); }
+.avatar4 { background-image: url('../../assets/images/avatars/avatar_4.png'); }
+.avatar5 { background-image: url('../../assets/images/avatars/avatar_5.png'); }
+.avatar6 { background-image: url('../../assets/images/avatars/avatar_6.png'); }
+.avatar7 { background-image: url('../../assets/images/avatars/avatar_7.png'); }
+.avatar8 { background-image: url('../../assets/images/avatars/avatar_8.png'); }
+
+.avatar_joueur {
+  background-size: 200px 300px;
+  background-repeat : no-repeat;
+  width: 200px;
+  height: 300px;
+  z-index : 30;
+}
