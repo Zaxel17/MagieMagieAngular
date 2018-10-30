@@ -13,3 +13,19 @@
     <button>Valider</button>
   </form>
 </div>
+
+<div id="ListeDesParties" *ngIf="joueur.isConnected" >
+
+Liste des parties !
+
+  <br>
+
+  <div *ngFor="let game of listepartie">{{game.name}} {{game.id}} <br> <button>Rejoindre</button> <hr> </div>
+
+  <form #f="ngForm" (ngSubmit)="createGame(f)">
+    <label>Selectionner le nom de la partie :</label>
+    <input #name name="name" type="text" [(ngModel)]="gameName">
+    <button>Valider</button>
+  </form>
+
+</div>
