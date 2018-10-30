@@ -70,11 +70,19 @@ export class HomeComponent implements OnInit {
 
   createGame(f: NgForm) {
     let post = [];
-    post.push(this.gameName);
+    let game = new Game(this.gameName);
+    post.push(game);
     console.log(post);
-    this.gameService.creerPartie(post).subscribe((game:Game) => {
-      this.listepartie.push(game);
+    this.gameService.creerPartie(post).subscribe((ngame: Game) => {
+      this.listepartie.push(ngame);
     })
-
   }
+
+
+    joingame(truc:string){
+      let gameid = truc;
+      let userid = this.joueur._id;
+      console.log(gameid+" "+userid);
+      this.gameService.rejoindrePartie(gameid, userid);
+    }
 }

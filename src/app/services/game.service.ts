@@ -14,8 +14,11 @@ export class GameService {
   }
 
   creerPartie(post){
-    console.log(post)
-    return this.http.post('http://192.168.110.127:666/games',post);
+    return this.http.post('http://192.168.110.127:666/games',post[0]);
+  }
+
+  rejoindrePartie(gameid, userid){
+    return this.http.post('http://192.168.110.127:666/games/:'+gameid+'/join/:'+userid,"" );
 
   }
 

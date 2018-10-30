@@ -6,8 +6,10 @@
   <form #f="ngForm" (ngSubmit)="connexion(f)" >
     <label>Selectionner votre avatar :</label>
     <select #avatar name="avatar"  [(ngModel)]="newAvatar">
-      <option *ngFor="let av of avatars">{{av.code}}</option>
+      <option *ngFor="let av of avatars"></option>
     </select>
+
+    <div *ngFor="let av of avatars" class="av.code avatar_joueur_adverse"></div>
     <label>Selectionner votre pseudo :</label>
     <input #pseudo name="pseudo" type="text" [(ngModel)]="newPseudo">
     <button>Valider</button>
@@ -20,7 +22,7 @@ Liste des parties !
 
   <br>
 
-  <div *ngFor="let game of listepartie">{{game.name}} {{game.id}} <br> <button>Rejoindre</button> <hr> </div>
+  <div *ngFor="let game of listepartie">{{game.name}} {{game.id}} <br> <button (click)="joingame( game.id)">Rejoindre</button> <hr> </div>
 
   <form #f="ngForm" (ngSubmit)="createGame(f)">
     <label>Selectionner le nom de la partie :</label>

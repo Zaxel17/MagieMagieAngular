@@ -5,6 +5,10 @@ export class Game {
     isStarted: boolean;
     idWinner: string;
     currentPlayerPosition: number;
-
+    name:string;
     players: Player[];
+
+  constructor(name){
+    this.name = name;
+  }
 }
