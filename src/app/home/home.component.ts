@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   newAvatar: string;
 
   listepartie:Game[];
+  gameName:string;
 
   constructor(private avatarservice:AvatarsService, private logservice:LoginService, private gameService:GameService) {
     this.avatar = {_id: "", code: ""};
@@ -52,7 +53,6 @@ export class HomeComponent implements OnInit {
     let post = [];
     post.push(pseudo);
     post.push(this.avatars[i]._id);
-    console.log(post);
     this.logservice.postPlayer(post)
       .subscribe(
       (players:Player) => {
@@ -66,7 +66,15 @@ export class HomeComponent implements OnInit {
     this.gameService.getListePartie().subscribe( games => {
       this.listepartie = games;
     });
+  }
 
+  createGame(f: NgForm) {
+    let post = [];
+    post.push(this.gameName);
+    console.log(post);
+    this.gameService.creerPartie(post).subscribe((game:Game) => {
+      this.listepartie.push(game);
+    })
 
   }
 }

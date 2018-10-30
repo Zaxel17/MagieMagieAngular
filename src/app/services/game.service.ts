@@ -10,7 +10,13 @@ export class GameService {
   constructor(private http:HttpClient) { }
 
   getListePartie(){
-    return this.http.get<Game[]>('http://192.168.110.127:666/games/not-started')
+    return this.http.get<Game[]>('http://192.168.110.127:666/games/not-started');
+  }
+
+  creerPartie(post){
+    console.log(post)
+    return this.http.post('http://192.168.110.127:666/games',post);
+
   }
 
 }
